@@ -1,0 +1,144 @@
+{
+  "info": {
+    "name": "RealEstate API — Departments",
+    "_postman_id": "realestate-departments-collection",
+    "description": "CRUD completo para el endpoint /api/departments",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000", "type": "string" }
+  ],
+  "item": [
+    {
+      "name": "GET — Listar todos (paginado)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/departments?page=1&pageSize=10",
+          "host": ["{{baseUrl}}"],
+          "path": ["api","departments"],
+          "query": [
+            { "key": "page",     "value": "1"  },
+            { "key": "pageSize", "value": "10" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET — Filtrar por distrito",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/departments?district=Miraflores",
+          "host": ["{{baseUrl}}"],
+          "path": ["api","departments"],
+          "query": [{ "key": "district", "value": "Miraflores" }]
+        }
+      }
+    },
+    {
+      "name": "GET — Filtrar por estado",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/departments?status=AVAILABLE",
+          "host": ["{{baseUrl}}"],
+          "path": ["api","departments"],
+          "query": [{ "key": "status", "value": "AVAILABLE" }]
+        }
+      }
+    },
+    {
+      "name": "GET — Filtrar por rango de precio",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/departments?minPrice=100000&maxPrice=250000",
+          "host": ["{{baseUrl}}"],
+          "path": ["api","departments"],
+          "query": [
+            { "key": "minPrice", "value": "100000" },
+            { "key": "maxPrice", "value": "250000" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET — Búsqueda libre",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/departments?search=Larco",
+          "host": ["{{baseUrl}}"],
+          "path": ["api","departments"],
+          "query": [{ "key": "search", "value": "Larco" }]
+        }
+      }
+    },
+    {
+      "name": "GET — Obtener por ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/departments/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api","departments","1"]
+        }
+      }
+    },
+    {
+      "name": "GET — Listar distritos",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/departments/districts",
+          "host": ["{{baseUrl}}"],
+          "path": ["api","departments","districts"]
+        }
+      }
+    },
+    {
+      "name": "POST — Crear departamento",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"address\": \"Av. Pardo 456\",\n  \"district\": \"Miraflores\",\n  \"bedrooms\": 2,\n  \"floor\": 4,\n  \"areaM2\": 75.5,\n  \"price\": 195000,\n  \"description\": \"Departamento luminoso con excelente ubicación\",\n  \"hasParking\": true,\n  \"hasBalcony\": false,\n  \"status\": \"AVAILABLE\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/departments",
+          "host": ["{{baseUrl}}"],
+          "path": ["api","departments"]
+        }
+      }
+    },
+    {
+      "name": "PUT — Actualizar departamento",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"address\": \"Av. Pardo 456 - Actualizado\",\n  \"district\": \"Miraflores\",\n  \"bedrooms\": 3,\n  \"floor\": 4,\n  \"areaM2\": 85.0,\n  \"price\": 215000,\n  \"description\": \"Departamento remodelado con terraza\",\n  \"hasParking\": true,\n  \"hasBalcony\": true,\n  \"status\": \"AVAILABLE\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/departments/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api","departments","1"]
+        }
+      }
+    },
+    {
+      "name": "DELETE — Eliminar departamento",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "{{baseUrl}}/api/departments/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api","departments","1"]
+        }
+      }
+    }
+  ]
+}

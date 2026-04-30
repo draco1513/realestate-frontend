@@ -61,3 +61,30 @@ src/
 - Selección múltiple con checkboxes
 - Notificaciones toast
 - Accesibilidad básica (aria-labels, roles)
+
+
+## Colección de Postman
+
+La colección está disponible en el archivo:
+
+`RealEstateAPI.postman_collection.json`
+
+Cómo importarla en Postman:
+
+- Abre Postman.
+- Haz clic en `Import`.
+- Selecciona `Upload Files`.
+- Elige el archivo `RealEstateAPI.postman_collection.json` desde la raíz del proyecto.
+- Ajusta la variable `baseUrl` si tu backend corre en otro host o puerto.
+
+La colección incluye:
+
+- Listar departamentos paginados
+- Filtrar por distrito
+- Filtrar por estado
+- Buscar por texto
+- Obtener departamento por ID
+- Listar distritos
+- Crear departamento
+- Actualizar departamento
+- Eliminar departamento

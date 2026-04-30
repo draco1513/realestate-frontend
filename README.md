@@ -9,9 +9,14 @@ Interfaz para gestión de departamentos, construida con React 18.
 - npm 9+
 - Backend corriendo en `http://localhost:5000`
 
-## Instalar y ejecutar
+Este proyecto está en:
+`https://github.com/draco1513/realestate-frontend`
+
+## Clonar y ejecutar
 
 ```bash
+git clone https://github.com/draco1513/realestate-frontend.git
+cd realestate-frontend
 npm install
 npm start
 ```
